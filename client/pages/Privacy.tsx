@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import VideoBackground from "@/components/VideoBackground";
 import { Link } from "react-router-dom";
 
 export default function Privacy() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-yoga-cream">
       <VideoBackground />
@@ -72,7 +77,7 @@ export default function Privacy() {
               </ul>
               
               <p className="mt-6">To make any such request, please contact us at:</p>
-              <p className="mt-2">📧 <a href="mailto:info@nservetechnology.ae" className="text-purple-400 hover:text-purple-300">info@nservetechnology.ae</a></p>
+              <p className="mt-2">📧 <a href="mailto:info@nservetechnology.com" className="text-purple-400 hover:text-purple-300">info@nservetechnology.com</a></p>
               <p>📍 nServe Technology LLC, FDRK 0460, Compass Building, Al Sohada Road, Al Hamara Industrial Zone FZ, Ras Al Khaimah, UAE</p>
             </div>
             

@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import VideoBackground from "@/components/VideoBackground";
 import { Link } from "react-router-dom";
 
 export default function Terms() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-yoga-cream">
       <VideoBackground />
@@ -45,7 +50,7 @@ export default function Terms() {
               <h2 className="text-2xl font-bold mt-8 mb-4">Terms and Conditions</h2>
               <p>The Platform is owned by nServe Technology LLC Private Limited, a company incorporated under the Companies Act, 1956. Your use of the Platform and services are governed by these Terms of Use.</p>
               
-              <p className="mt-4">All disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of Indian courts and governed by the laws of India.</p>
+              <p className="mt-4">All disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of the United Arab Emirates and shall be governed by the laws of the United Arab Emirates.</p>
             </div>
             
             <div className="mt-8 pt-8 border-t border-white/20">

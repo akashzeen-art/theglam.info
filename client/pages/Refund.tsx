@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import VideoBackground from "@/components/VideoBackground";
 import { Link } from "react-router-dom";
 
 export default function Refund() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-yoga-cream">
       <VideoBackground />
@@ -29,7 +34,7 @@ export default function Refund() {
               <p className="mt-4">Refund requests can be made if you encounter technical issues that prevent you from using our service and that cannot be resolved by our support team. Proof of the issue may be required.</p>
               
               <h2 className="text-2xl font-bold mt-8 mb-4">4. Process for Requesting a Refund</h2>
-              <p>To request a refund, please contact our customer support team at <a href="mailto:info@nservetechnology.ae" className="text-purple-400 hover:text-purple-300">info@nservetechnology.ae</a>. Include your account information, subscription details, and a brief explanation of why you are requesting a refund.</p>
+              <p>To request a refund, please contact our customer support team at <a href="mailto:info@nservetechnology.com" className="text-purple-400 hover:text-purple-300">info@nservetechnology.com</a>. Include your account information, subscription details, and a brief explanation of why you are requesting a refund.</p>
               
               <h2 className="text-2xl font-bold mt-8 mb-4">5. Refund Processing</h2>
               <p>Once your refund request is received and inspected, we will send you an email to notify you of the approval or rejection of your refund.</p>
@@ -47,7 +52,7 @@ export default function Refund() {
               </ul>
               
               <h2 className="text-2xl font-bold mt-8 mb-4">7. Contact Us</h2>
-              <p>If you have any questions about our refund policy, please contact us at <a href="mailto:info@nservetechnology.ae" className="text-purple-400 hover:text-purple-300">info@nservetechnology.ae</a>.</p>
+              <p>If you have any questions about our refund policy, please contact us at <a href="mailto:info@nservetechnology.com" className="text-purple-400 hover:text-purple-300">info@nservetechnology.com</a>.</p>
             </div>
             
             <div className="mt-8 pt-8 border-t border-white/20">
