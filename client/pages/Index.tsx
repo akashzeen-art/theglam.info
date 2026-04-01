@@ -62,7 +62,7 @@ export default function Index() {
       name: "Aastha",
       time: "35 mins",
       image: "/LANDSCAPE/aastha.png",
-      description: "Desi romance ka nasha, full of passion aur pyaar",
+      description: "Desi romance ki kahani, full of passion aur pyaar",
       videoUrl: "https://vz-66b329af-17e.b-cdn.net/df51e289-de98-44b6-8916-46bb9ab37fb8/play_480p.mp4",
     },
     {
@@ -70,7 +70,7 @@ export default function Index() {
       name: "Adavat",
       time: "25 mins",
       image: "/LANDSCAPE/adavat.png",
-      description: "Dushmani se mohabbat tak ka safar, bold aur intense",
+      description: "Dushmani se mohabbat tak ka safar, dramatic aur intense",
       videoUrl: "https://vz-66b329af-17e.b-cdn.net/50b7d265-485d-4f58-995f-dcddf83176af/play_480p.mp4",
     },
     {
@@ -78,7 +78,7 @@ export default function Index() {
       name: "Ajnabee",
       time: "30 mins",
       image: "/LANDSCAPE/ajnabee.png",
-      description: "Anjaan raahon mein pyaar ka ehsaas, bold aur romantic",
+      description: "Anjaan raahon mein pyaar ka ehsaas, mysterious aur romantic",
       videoUrl: "https://vz-66b329af-17e.b-cdn.net/d47ead79-b345-46b3-93e8-03a96e1de2bb/play_480p.mp4",
     },
     {
@@ -86,7 +86,7 @@ export default function Index() {
       name: "Aookabhi Haveli Pe",
       time: "32 mins",
       image: "/LANDSCAPE/Aookabhi haveli pe.png",
-      description: "Haveli ki rahasymay kahani, full of drama aur desire",
+      description: "Haveli ki rahasymay kahani, full of drama aur suspense",
       videoUrl: "https://vz-66b329af-17e.b-cdn.net/f18a2607-7df3-46d3-a00f-f8a976fc5043/play_480p.mp4",
     },
   ];
@@ -136,7 +136,7 @@ export default function Index() {
                   <span className="text-purple-500"> TheGlam</span>
                 </h1>
                 <p className="text-lg text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto">
-                  Premium desi entertainment ka maza lijiye. Exclusive bold content dekho, mast kahaniyan explore karo, aur unlimited streaming enjoy karo.
+                  Premium Indian entertainment ka maza lijiye. Exclusive original content dekho, mast kahaniyan explore karo, aur unlimited streaming enjoy karo.
                 </p>
               </div>
 
@@ -150,10 +150,10 @@ export default function Index() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16 animate-slide-up">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                Featured <span className="text-purple-500">Bold Videos</span>
+                Featured <span className="text-purple-500">Top Videos</span>
               </h2>
               <p className="text-lg text-white/90 max-w-2xl mx-auto">
-                Sabse bold aur exciting desi content, specially selected for you
+                Sabse exciting aur popular desi content, specially selected for you
               </p>
             </div>
 
@@ -190,7 +190,7 @@ export default function Index() {
         <section className="py-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-6">
-              Sabhi <span className="text-purple-500">Desi Videos</span>
+              Sabhi <span className="text-purple-500">Desi Shows</span>
             </h2>
             <Carousel slidesToShow={3}>
               {videoUrls.slice(0, 20).map((video) => (
@@ -219,7 +219,7 @@ export default function Index() {
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
-              Popular Desi <span className="text-purple-500">Bold Shows</span>
+              Popular Desi <span className="text-purple-500">Web Shows</span>
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-6">
               {[
@@ -250,7 +250,7 @@ export default function Index() {
                     </div>
                   </div>
                   <div className="mt-2">
-                    <p className="text-xs text-white/80">{video.time}, Desi Content</p>
+                    <p className="text-xs text-white/80">{video.time}, Indian Content</p>
                     <h3 className="font-bold text-sm text-white">{video.title}</h3>
                   </div>
                 </div>
@@ -263,7 +263,7 @@ export default function Index() {
         <section className="py-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-6">
-              Solo Episodes <span className="text-purple-500">Abhi Dekho!</span>
+              Top Episodes <span className="text-purple-500">Abhi Dekho!</span>
             </h2>
             <div className="relative group">
               <div className="overflow-hidden">
@@ -290,7 +290,7 @@ export default function Index() {
                           </div>
                         </div>
                         <div className="mt-2 max-w-[150px] mx-auto">
-                          <p className="text-xs text-white/80">{video.time}, Desi Content</p>
+                          <p className="text-xs text-white/80">{video.time}, Indian Content</p>
                           <h3 className="font-bold text-xs text-white">{video.title}</h3>
                         </div>
                       </div>
@@ -327,9 +327,9 @@ export default function Index() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-3">
-                Bold Sexy Desire <span className="text-purple-500">desi series</span>
+                Hot &amp; Trending <span className="text-purple-500">Desi Series</span>
               </h2>
-              <p className="text-white/90 text-lg">Abhi Dekho</p>
+              <p className="text-white/90 text-lg">Watch Now</p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {[
@@ -363,7 +363,7 @@ export default function Index() {
         <section className="py-6 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-4">
-              Exciting Episodes <span className="text-purple-500">Desi Masala</span>
+              Exciting Episodes <span className="text-purple-500">Must Watch</span>
             </h2>
             <Carousel slidesToShow={3}>
               {[
@@ -401,7 +401,7 @@ export default function Index() {
         <section className="py-6 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-4">
-              Premium Desi <span className="text-purple-500">Collection</span>
+              Premium <span className="text-purple-500">Collection</span>
             </h2>
             <Carousel slidesToShow={3}>
               {[
@@ -440,7 +440,7 @@ export default function Index() {
         <section className="py-6 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-4">
-              Trending <span className="text-purple-500">Is Hafte</span>
+              Trending <span className="text-purple-500">This Week</span>
             </h2>
             <Carousel slidesToShow={3}>
               {[
@@ -518,7 +518,7 @@ export default function Index() {
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-yoga-brown/5">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
-              Sensual <span className="text-purple-500">Collection</span>
+              Popular <span className="text-purple-500">Collection</span>
             </h2>
             <Carousel slidesToShow={5}>
               {[
@@ -558,7 +558,7 @@ export default function Index() {
         <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
-              Desire <span className="text-purple-500">Series</span>
+              Drama <span className="text-purple-500">Series</span>
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
               {[
@@ -598,7 +598,7 @@ export default function Index() {
         <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
-              Premium <span className="text-purple-500">Sexy Series</span>
+              Premium <span className="text-purple-500">Web Series</span>
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-6">
               {[
@@ -637,7 +637,7 @@ export default function Index() {
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col items-center text-center space-y-6">
               <img src="/logo.png" alt="TheGlam" className="w-40 h-40 object-contain" />
-              <p className="text-white/80 text-sm">Your gateway to desi entertainment</p>
+              <p className="text-white/80 text-sm">Your gateway to Indian entertainment</p>
               <div className="border-t border-white/20 pt-6 w-full">
                 <p className="text-white/80 text-sm mb-2">&copy; 2025, nServe Technology LLC All Rights Reserved</p>
                 <div className="flex flex-wrap gap-2 justify-center text-white/80 text-sm">
