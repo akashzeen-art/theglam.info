@@ -4,7 +4,6 @@ import VideoBackground from "@/components/VideoBackground";
 import VideoModal from "@/components/VideoModal";
 import SubscriptionModal from "@/components/SubscriptionModal";
 import PlanModal from "@/components/PlanModal";
-import AgeVerificationModal from "@/components/AgeVerificationModal";
 import Carousel from "@/components/Carousel";
 import { GraduationCap, Clock, Users, Star, ArrowRight, Leaf, Flame } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -15,7 +14,6 @@ export default function Index() {
   const [selectedVideo, setSelectedVideo] = useState<{ url: string; title: string } | null>(null);
   const [subscriptionModal, setSubscriptionModal] = useState({ isOpen: false, url: "", title: "" });
   const [planModal, setPlanModal] = useState({ isOpen: false, mobile: "" });
-  const [ageVerificationModal, setAgeVerificationModal] = useState({ isOpen: false, mobile: "" });
   const [pendingVideo, setPendingVideo] = useState<{ url: string; title: string } | null>(null);
   const [soloSlideIndex, setSoloSlideIndex] = useState(0);
 
@@ -33,12 +31,6 @@ export default function Index() {
   const handleSubscription = (mobile: string) => {
     console.log('Subscription submitted, pending video:', pendingVideo);
     setSubscriptionModal({ isOpen: false, url: "", title: "" });
-    setAgeVerificationModal({ isOpen: true, mobile });
-  };
-
-  const handleAgeVerificationConfirm = () => {
-    const mobile = ageVerificationModal.mobile;
-    setAgeVerificationModal({ isOpen: false, mobile: "" });
     setPlanModal({ isOpen: true, mobile });
   };
 
@@ -83,19 +75,19 @@ export default function Index() {
     },
     {
       id: 3,
-      name: "Best Performance EP1",
+      name: "Ajnabee",
       time: "30 mins",
-      image: "/LANDSCAPE/best performance ep1.png",
-      description: "Sabse best performance, desi tadka with bold scenes",
-      videoUrl: "https://vz-66b329af-17e.b-cdn.net/3400d90e-7902-460c-ba28-62b3473fd21a/play_480p.mp4",
+      image: "/LANDSCAPE/ajnabee.png",
+      description: "Anjaan raahon mein pyaar ka ehsaas, bold aur romantic",
+      videoUrl: "https://vz-66b329af-17e.b-cdn.net/d47ead79-b345-46b3-93e8-03a96e1de2bb/play_480p.mp4",
     },
     {
       id: 4,
-      name: "Best Performance EP2",
-      time: "28 mins",
-      image: "/LANDSCAPE/best performance ep2.png",
-      description: "Aur bhi zyada bold aur sexy, must watch episode",
-      videoUrl: "https://vz-66b329af-17e.b-cdn.net/45e25b47-cd65-43ca-b42b-b4fc6615139a/play_480p.mp4",
+      name: "Aookabhi Haveli Pe",
+      time: "32 mins",
+      image: "/LANDSCAPE/Aookabhi haveli pe.png",
+      description: "Haveli ki rahasymay kahani, full of drama aur desire",
+      videoUrl: "https://vz-66b329af-17e.b-cdn.net/f18a2607-7df3-46d3-a00f-f8a976fc5043/play_480p.mp4",
     },
   ];
 
@@ -119,11 +111,6 @@ export default function Index() {
         isOpen={subscriptionModal.isOpen} 
         onClose={() => setSubscriptionModal({ isOpen: false, url: "", title: "" })} 
         onSubmit={handleSubscription} 
-      />
-      <AgeVerificationModal
-        isOpen={ageVerificationModal.isOpen}
-        onClose={() => setAgeVerificationModal({ isOpen: false, mobile: "" })}
-        onConfirm={handleAgeVerificationConfirm}
       />
       <PlanModal
         isOpen={planModal.isOpen}
@@ -236,20 +223,20 @@ export default function Index() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-6">
               {[
-                { id: 1, title: "Forbidden Love", time: "00:34 mins", img: "forbidden love.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/3ac6107e-7f6a-4745-be24-b04c0625472b/play_480p.mp4" },
-                { id: 2, title: "Gangubai Kaamwali", time: "00:41 mins", img: "gangubai kaamwali.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/9fa5170d-1a9c-468d-a2e6-7f0caed03211/play_480p.mp4" },
-                { id: 3, title: "Happy Shorts", time: "00:42 mins", img: "happy shorts.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/20b53b00-0426-48df-8d70-d52eb14dd83a/play_480p.mp4" },
-                { id: 4, title: "Her Story", time: "00:33 mins", img: "her story.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/f07a8ec2-84cd-48d9-bd0f-c1cf9781f353/play_480p.mp4" },
-                { id: 5, title: "Highway 69", time: "00:40 mins", img: "highway 69.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/5fed72b5-d5a1-4e1b-a7de-a2c7e8ec3caf/play_480p.mp4" },
-                { id: 6, title: "Hot Air Hostage EP1", time: "00:34 mins", img: "hot air hostahe ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/8b15894c-977a-4502-842f-b57de8c5fda6/play_480p.mp4" },
-                { id: 7, title: "Hot Air Hostage EP2", time: "00:38 mins", img: "hot air hostahe ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/5165c856-ab73-4468-97ef-5a70980ea288/play_480p.mp4" },
-                { id: 8, title: "Hot Air Hostage EP3", time: "00:35 mins", img: "hot air hostahe ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/9a006cb7-17f2-4894-bdcc-a0a57faf8f25/play_480p.mp4" },
-                { id: 9, title: "Hot Coffee EP1", time: "00:37 mins", img: "hot coffie ep 1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/9c5e598a-06bb-4b7d-89f9-cb76ec94a78b/play_480p.mp4" },
-                { id: 10, title: "Hot Coffee EP2", time: "00:39 mins", img: "hot coffie ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/ddf32747-ae8a-4437-89c9-08fdbef2f627/play_480p.mp4" },
-                { id: 11, title: "Hot Shot", time: "00:36 mins", img: "hot shot .png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/ebbf3364-1d25-4454-8e8a-0aa166f31dd7/play_480p.mp4" },
-                { id: 12, title: "Jaal", time: "00:41 mins", img: "jaal.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/23e20e42-71bf-4d34-bb2b-638a6e00d126/play_480p.mp4" },
-                { id: 13, title: "Kama Rasam", time: "00:43 mins", img: "kama rasam .png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/25199036-86e4-4231-9e7e-529f90ac0e48/play_480p.mp4" },
-                { id: 14, title: "Kamini EP1", time: "00:38 mins", img: "kamini ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/66392db7-c400-447d-afd8-ffce12d5e2cf/play_480p.mp4" },
+                { id: 1, title: "Dhund", time: "00:35 mins", img: "dhund.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/dd4dad95-2eef-41d5-be33-dac462963da3/play_480p.mp4" },
+                { id: 2, title: "Did It Happen", time: "00:33 mins", img: "did it happen.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/8e7a93e5-db16-48b2-b5e4-ef0bc38c9bf3/play_480p.mp4" },
+                { id: 3, title: "Dream Movie", time: "00:40 mins", img: "dream movie.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/26501c57-72a5-461d-895f-74cc0d157833/play_480p.mp4" },
+                { id: 4, title: "Ek Choti Si Love Story EP1", time: "00:30 mins", img: "ek choti si love story ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/8d73d338-4ee5-4747-b10f-9938a581e5d5/play_480p.mp4" },
+                { id: 5, title: "Ek Choti Si Love Story EP2", time: "00:32 mins", img: "ek choti si love story ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/7a472d63-8b87-4e74-b0f9-21821e3b8e1c/play_480p.mp4" },
+                { id: 6, title: "Ek Choti Si Love Story EP3", time: "00:34 mins", img: "ek choti si love story ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/0ef70162-4335-41dc-95f3-b89d22724cf3/play_480p.mp4" },
+                { id: 7, title: "Ek Choti Si Love Story EP4", time: "00:35 mins", img: "ek choti si love story ep4.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/c67045d4-efb3-4977-9428-4937ef3c57ba/play_480p.mp4" },
+                { id: 8, title: "Ek Haseena Thi EP1", time: "00:40 mins", img: "ek hassina thi ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/b8f9b36e-ab04-4d30-91da-345e6ffa02b8/play_480p.mp4" },
+                { id: 9, title: "Ek Haseena Thi EP2", time: "00:38 mins", img: "ek hassina thi ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/e7f190a7-9cf9-4b89-9e87-ee618f10168a/play_480p.mp4" },
+                { id: 10, title: "Fooljhadi Bhabhi", time: "00:44 mins", img: "fooljhadi bhabhi.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/e08930bc-13e0-4f73-801f-d98839dc384e/play_480p.mp4" },
+                { id: 11, title: "Forbidden Love", time: "00:34 mins", img: "forbidden love.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/3ac6107e-7f6a-4745-be24-b04c0625472b/play_480p.mp4" },
+                { id: 12, title: "Game of Love", time: "00:36 mins", img: "game of love.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/997ceca5-5339-4805-936a-b8ef01542af3/play_480p.mp4" },
+                { id: 13, title: "Game Plan", time: "00:38 mins", img: "game plan.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/38a92e61-e761-4789-b4ef-a551c7b1bead/play_480p.mp4" },
+                { id: 14, title: "Gangubai Kaamwali", time: "00:41 mins", img: "gangubai kaamwali.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/9fa5170d-1a9c-468d-a2e6-7f0caed03211/play_480p.mp4" },
               ].map((video, index) => (
                 <div key={video.id} className="group cursor-pointer animate-fade-in" style={{ animationDelay: `${index * 50}ms` }} onClick={() => openVideo(video.videoUrl, video.title)}>
                   <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
@@ -282,13 +269,13 @@ export default function Index() {
               <div className="overflow-hidden">
                 <div className="flex transition-transform duration-300 ease-out gap-4" style={{ transform: `translateX(-${soloSlideIndex * 100}%)` }}>
                   {[
-                    { id: 1, title: "Kamini EP2", time: "00:33 mins", img: "kamini ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/a045b5c9-8853-40e7-8edf-d46e955952ee/play_480p.mp4" },
-                    { id: 2, title: "Kamini EP3", time: "00:36 mins", img: "kamini ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/b7d1489a-ea57-4d4a-b34e-802138f49aa9/play_480p.mp4" },
-                    { id: 3, title: "Kill For Love EP1", time: "00:34 mins", img: "kill for love ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/fc3fa1ee-865e-46e9-ba57-5296bd3951db/play_480p.mp4" },
-                    { id: 4, title: "Kill For Love EP2", time: "00:40 mins", img: "kill for love ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/4c6b6133-f1da-4515-9878-66d95941438d/play_480p.mp4" },
-                    { id: 5, title: "Kill For Love EP3", time: "00:34 mins", img: "kill for love ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/7378b409-a38d-4bb9-8731-6da2c43691e7/play_480p.mp4" },
-                    { id: 6, title: "Kill For Love EP4", time: "00:41 mins", img: "kill for love ep4.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/affa862c-e511-4eff-aff3-56810d713399/play_480p.mp4" },
-                    { id: 7, title: "Killer Workout", time: "00:42 mins", img: "killer workout.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/efaf0c08-eb70-41df-bfc4-72092aeb3c83/play_480p.mp4" },
+                    { id: 1, title: "Godess of Love", time: "00:36 mins", img: "godess of love.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/0ff3f1e0-4607-49ba-afdb-65d03f2592f4/play_480p.mp4" },
+                    { id: 2, title: "Guilt", time: "00:38 mins", img: "guilt.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/40c49714-e30b-49e7-8e8e-a783f8344b7a/play_480p.mp4" },
+                    { id: 3, title: "Happy Shorts", time: "00:42 mins", img: "happy shorts.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/20b53b00-0426-48df-8d70-d52eb14dd83a/play_480p.mp4" },
+                    { id: 4, title: "Hello Myself Lilly", time: "00:35 mins", img: "hello myself lilly.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/558de7ac-8c20-4809-a65a-ac67ee60b8e3/play_480p.mp4" },
+                    { id: 5, title: "Her Story", time: "00:33 mins", img: "her story.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/f07a8ec2-84cd-48d9-bd0f-c1cf9781f353/play_480p.mp4" },
+                    { id: 6, title: "Highway 69", time: "00:40 mins", img: "highway 69.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/5fed72b5-d5a1-4e1b-a7de-a2c7e8ec3caf/play_480p.mp4" },
+                    { id: 7, title: "Horror Story", time: "00:45 mins", img: "horror story.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/855129f1-0a59-48fb-89cb-e100f1807ce9/play_480p.mp4" },
                   ].map((video) => (
                     <div key={video.id} className="flex-shrink-0 w-full sm:w-1/3 md:w-1/5">
                       <div className="group cursor-pointer px-2" onClick={() => openVideo(video.videoUrl, video.title)}>
@@ -346,10 +333,10 @@ export default function Index() {
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {[
-                { id: 1, title: "Lady Killer", episode: "S01E01", img: "lady killer.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/3e40f71c-19f7-41d7-b95a-2e14e16dda06/play_480p.mp4" },
-                { id: 2, title: "Love Detective", episode: "S01E02", img: "love detective.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/59aade45-6010-4198-877e-9a9f0a1bcbc8/play_480p.mp4" },
-                { id: 3, title: "Love Lady", episode: "S01E03", img: "love lady.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/e5e3833f-b06a-4b30-adce-5af66226d947/play_480p.mp4" },
-                { id: 4, title: "MMS Taxi", episode: "S01E04", img: "mms taxi.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/a79219ec-b365-455e-a844-1c3dc3b0c1f2/play_480p.mp4" },
+                { id: 1, title: "Hot Air Hostage EP1", episode: "S01E01", img: "hot air hostage ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/8b15894c-977a-4502-842f-b57de8c5fda6/play_480p.mp4" },
+                { id: 2, title: "Hot Air Hostage EP2", episode: "S01E02", img: "hot air hostage ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/5165c856-ab73-4468-97ef-5a70980ea288/play_480p.mp4" },
+                { id: 3, title: "Hot Air Hostage EP3", episode: "S01E03", img: "hot air hostahe ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/9a006cb7-17f2-4894-bdcc-a0a57faf8f25/play_480p.mp4" },
+                { id: 4, title: "Hot Coffee EP2", episode: "S01E04", img: "hot coffee ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/ddf32747-ae8a-4437-89c9-08fdbef2f627/play_480p.mp4" },
               ].map((video, index) => (
                 <div key={video.id} className="group cursor-pointer animate-fade-in" style={{ animationDelay: `${index * 100}ms` }} onClick={() => openVideo(video.videoUrl, video.title)}>
                   <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
@@ -380,14 +367,14 @@ export default function Index() {
             </h2>
             <Carousel slidesToShow={3}>
               {[
-                { id: 1, title: "Paap EP1", time: "15 mins", img: "paap ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/66d9215c-9e6d-45c4-baf0-dde31e3d5057/play_480p.mp4" },
-                { id: 2, title: "Paap EP2", time: "20 mins", img: "paap ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/c4d37df3-6da5-4145-9202-f225ed699791/play_480p.mp4" },
-                { id: 3, title: "Paap EP3", time: "25 mins", img: "paap ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/fb5b01c0-9519-4f2b-ab0b-0cff13691039/play_480p.mp4" },
-                { id: 4, title: "Paap EP4", time: "10 mins", img: "paap ep4.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/9f8c132f-f631-4af1-8320-23e360f33682/play_480p.mp4" },
-                { id: 5, title: "Sasurji", time: "18 mins", img: "sasurji.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/c597190d-48fd-4c56-b90a-22dff40bf987/play_480p.mp4" },
-                { id: 6, title: "Shikari EP1", time: "22 mins", img: "shikari ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/e5dbb886-7e2c-4ec6-9982-d75a5b6a025a/play_480p.mp4" },
-                { id: 7, title: "Shikari EP2", time: "12 mins", img: "shikari ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/8d73d338-4ee5-4747-b10f-9938a581e5d5/play_480p.mp4" },
-                { id: 8, title: "Shikari EP3", time: "28 mins", img: "shikari ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/7a472d63-8b87-4e74-b0f9-21821e3b8e1c/play_480p.mp4" },
+                { id: 1, title: "Hot Coffee EP1", time: "37 mins", img: "hot coffie ep 1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/9c5e598a-06bb-4b7d-89f9-cb76ec94a78b/play_480p.mp4" },
+                { id: 2, title: "Hot Shot", time: "36 mins", img: "HOT SHOT.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/ebbf3364-1d25-4454-8e8a-0aa166f31dd7/play_480p.mp4" },
+                { id: 3, title: "Jaal", time: "41 mins", img: "jaal.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/23e20e42-71bf-4d34-bb2b-638a6e00d126/play_480p.mp4" },
+                { id: 4, title: "Jinn", time: "38 mins", img: "jinn.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/caff7c4f-b4a8-41e7-adec-1d848115ff70/play_480p.mp4" },
+                { id: 5, title: "Kama Rasam", time: "43 mins", img: "kama rasam .png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/25199036-86e4-4231-9e7e-529f90ac0e48/play_480p.mp4" },
+                { id: 6, title: "Kamini EP1", time: "38 mins", img: "kamini ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/66392db7-c400-447d-afd8-ffce12d5e2cf/play_480p.mp4" },
+                { id: 7, title: "Kamini EP2", time: "33 mins", img: "kamini ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/a045b5c9-8853-40e7-8edf-d46e955952ee/play_480p.mp4" },
+                { id: 8, title: "Kamini EP3", time: "36 mins", img: "kamini ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/b7d1489a-ea57-4d4a-b34e-802138f49aa9/play_480p.mp4" },
               ].map((video) => (
                 <div key={video.id} className="group cursor-pointer px-1" onClick={() => openVideo(video.videoUrl, video.title)}>
                   <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
@@ -418,15 +405,15 @@ export default function Index() {
             </h2>
             <Carousel slidesToShow={3}>
               {[
-                { id: 1, title: "Shikari EP4", genre: "Bold Series", img: "shikari ep4.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/0ef70162-4335-41dc-95f3-b89d22724cf3/play_480p.mp4" },
-                { id: 2, title: "Taak Jhaak", genre: "Hot Story", img: "taak jhaak.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/c67045d4-efb3-4977-9428-4937ef3c57ba/play_480p.mp4" },
-                { id: 3, title: "Tera Nasha", genre: "Romance", img: "tera nasha.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/b8f9b36e-ab04-4d30-91da-345e6ffa02b8/play_480p.mp4" },
-                { id: 4, title: "The Insult EP1", genre: "Drama", img: "the insult ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/e7f190a7-9cf9-4b89-9e87-ee618f10168a/play_480p.mp4" },
-                { id: 5, title: "The Insult EP2", genre: "Drama", img: "the insult ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/3ac6107e-7f6a-4745-be24-b04c0625472b/play_480p.mp4" },
-                { id: 6, title: "The Insult EP3", genre: "Drama", img: "the insult ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/e08930bc-13e0-4f73-801f-d98839dc384e/play_480p.mp4" },
-                { id: 7, title: "The Insult EP4", genre: "Drama", img: "the insult ep4.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/d4e7f986-4c01-450a-8b6f-5945d13d7bad/play_480p.mp4" },
-                { id: 8, title: "Trapped EP1", genre: "Thriller", img: "trapped ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/4ac6a6ae-1e67-43d6-b402-6be260b3cb3b/play_480p.mp4" },
-                { id: 9, title: "Trapped EP2", genre: "Thriller", img: "trapped ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/3e40f71c-19f7-41d7-b95a-2e14e16dda06/play_480p.mp4" },
+                { id: 1, title: "Kill For Love EP1", genre: "Bold Series", img: "kill for love ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/b7d1489a-865e-46e9-ba57-5296bd3951db/play_480p.mp4" },
+                { id: 2, title: "Kill For Love EP2", genre: "Bold Series", img: "kill for love ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/4c6b6133-f1da-4515-9878-66d95941438d/play_480p.mp4" },
+                { id: 3, title: "Kill For Love EP3", genre: "Bold Series", img: "kill for love ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/7378b409-a38d-4bb9-8731-6da2c43691e7/play_480p.mp4" },
+                { id: 4, title: "Kill For Love EP4", genre: "Bold Series", img: "kill for love ep4.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/affa862c-e511-4eff-aff3-56810d713399/play_480p.mp4" },
+                { id: 5, title: "Killer Workout", genre: "Hot Story", img: "killer workout.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/efaf0c08-eb70-41df-bfc4-72092aeb3c83/play_480p.mp4" },
+                { id: 6, title: "Lady Killer", genre: "Drama", img: "lady killer.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/a014a664-19f7-41d7-b95a-2e14e16dda06/play_480p.mp4" },
+                { id: 7, title: "Last Love", genre: "Romance", img: "last love.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/d556d814-6c86-4ade-a09e-32810a64f243/play_480p.mp4" },
+                { id: 8, title: "Last Trip", genre: "Thriller", img: "last trip.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/b1401049-72e9-4216-a446-093c6887ecda/play_480p.mp4" },
+                { id: 9, title: "Live In Relationship", genre: "Drama", img: "live in relationship.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/c5eb11d5-e57b-4b1c-abe8-c03211436c9f/play_480p.mp4" },
               ].map((video) => (
                 <div key={video.id} className="group cursor-pointer px-1" onClick={() => openVideo(video.videoUrl, video.title)}>
                   <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
@@ -457,14 +444,14 @@ export default function Index() {
             </h2>
             <Carousel slidesToShow={3}>
               {[
-                { id: 1, title: "Kamini EP1", views: "2.5M views", img: "kamini ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/66392db7-c400-447d-afd8-ffce12d5e2cf/play_480p.mp4" },
-                { id: 2, title: "Kamini EP2", views: "1.8M views", img: "kamini ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/a5c8f9d2-3e1b-4a7c-9f2d-8b6e4c1a5d3f/play_480p.mp4" },
-                { id: 3, title: "Kamini EP3", views: "3.2M views", img: "kamini ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/b7d9e1f3-4c2a-5b8d-a3e4-9c7f5d2b6e4a/play_480p.mp4" },
-                { id: 4, title: "Kill For Love EP1", views: "1.5M views", img: "kill for love ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/c8e1f2a4-5d3b-6c9e-b4f5-a8d6e3c7f5b2/play_480p.mp4" },
-                { id: 5, title: "Kill For Love EP2", views: "2.1M views", img: "kill for love ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/d9f2e3b5-6e4c-7d1f-c5a6-b9e7f4d8a6c3/play_480p.mp4" },
-                { id: 6, title: "Kill For Love EP3", views: "1.9M views", img: "kill for love ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/e1a3f4c6-7f5d-8e2a-d6b7-c1f8e5a9b7d4/play_480p.mp4" },
-                { id: 7, title: "Kill For Love EP4", views: "2.7M views", img: "kill for love ep4.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/f2b4e5d7-8a6e-9f3b-e7c8-d2a9f6b1c8e5/play_480p.mp4" },
-                { id: 8, title: "Killer Workout", views: "3.5M views", img: "killer workout.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/a3c5f6e8-9b7f-1d4c-f8d9-e3b1a7c2d9f6/play_480p.mp4" },
+                { id: 1, title: "Love and Lust", views: "2.5M views", img: "love and lust .png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/ffa20592-1383-4e2e-a973-303e8243864a/play_480p.mp4" },
+                { id: 2, title: "Love Detective", views: "1.8M views", img: "love detective.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/59aade45-6010-4198-877e-9a9f0a1bcbc8/play_480p.mp4" },
+                { id: 3, title: "Love Lady", views: "3.2M views", img: "love lady.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/e5e3833f-b06a-4b30-adce-5af66226d947/play_480p.mp4" },
+                { id: 4, title: "MMS Taxi", views: "1.5M views", img: "mms taxi.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/a79219ec-b365-455e-a844-1c3dc3b0c1f2/play_480p.mp4" },
+                { id: 5, title: "Online Ishq", views: "2.1M views", img: "online ishq.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/db7a29d5-b76c-4b18-aa91-59d488d34d6a/play_480p.mp4" },
+                { id: 6, title: "Paap EP1", views: "1.9M views", img: "paap ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/2e514ba2-409d-4c19-a7f7-c69d9cd0f60a/play_480p.mp4" },
+                { id: 7, title: "Paap EP2", views: "2.7M views", img: "paap ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/c4d37df3-6da5-4145-9202-f225ed699791/play_480p.mp4" },
+                { id: 8, title: "Paap EP3", views: "3.5M views", img: "paap ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/fb5b01c0-9519-4f2b-ab0b-0cff13691039/play_480p.mp4" },
               ].map((video) => (
                 <div key={video.id} className="group cursor-pointer px-1" onClick={() => openVideo(video.videoUrl, video.title)}>
                   <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
@@ -535,20 +522,20 @@ export default function Index() {
             </h2>
             <Carousel slidesToShow={5}>
               {[
-                { id: 1, title: "Flexibility Flow", duration: "25 mins", img: "1.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/9aec82c6-d6c1-4ae8-932a-6bf7b5329762/play_480p.mp4" },
-                { id: 2, title: "Body Balance", duration: "30 mins", img: "2.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/a773531d-3e5f-4fb2-aef7-e1a20d7b3711/play_480p.mp4" },
-                { id: 3, title: "Stretch & Tone", duration: "28 mins", img: "3.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/c80c0be0-09e2-483e-9562-17ccd2250188/play_480p.mp4" },
-                { id: 4, title: "Power Poses", duration: "32 mins", img: "4.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/b8febc79-f42a-4d93-805c-d4453b1f5604/play_480p.mp4" },
-                { id: 5, title: "Core Strength", duration: "27 mins", img: "5.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/225d5414-d6d3-45c5-aaed-8393c57a1f1d/play_480p.mp4" },
-                { id: 6, title: "Mindful Movement", duration: "35 mins", img: "6.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/e3168147-273d-4758-ae4f-dd128e41f9c7/play_480p.mp4" },
-                { id: 7, title: "Graceful Asanas", duration: "29 mins", img: "7.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/2f3a0402-035f-4935-8a64-8fc4a2e375fd/play_480p.mp4" },
-                { id: 8, title: "Wellness Flow", duration: "31 mins", img: "8.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/974e3e76-5cf9-4366-bc63-3c0f9c2c3507/play_480p.mp4" },
-                { id: 9, title: "Energy Boost", duration: "26 mins", img: "9.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/8ed4f9e8-dc12-4e6b-9947-3ef08d2144a4/play_480p.mp4" },
-                { id: 10, title: "Zen Practice", duration: "33 mins", img: "10.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/d08297f1-59e7-4f2c-a66b-f3b5bf4a1104/play_480p.mp4" },
+                { id: 1, title: "Paap EP4", duration: "35 mins", img: "paap ep4.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/c5507cdb-f631-4af1-8320-23e360f33682/play_480p.mp4" },
+                { id: 2, title: "Page3", duration: "30 mins", img: "page3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/3399c1c3-ce8f-4b85-949e-448281cf044e/play_480p.mp4" },
+                { id: 3, title: "Sasurji", duration: "18 mins", img: "sasurji.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/d8f5f984-48fd-4c56-b90a-22dff40bf987/play_480p.mp4" },
+                { id: 4, title: "Secret Agent", duration: "32 mins", img: "secret agent.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/f1685d6f-34f4-4b0f-b6b5-8618977e46bf/play_480p.mp4" },
+                { id: 5, title: "Shikari EP1", duration: "22 mins", img: "shikari ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/9e0c9c79-7e2c-4ec6-9982-d75a5b6a025a/play_480p.mp4" },
+                { id: 6, title: "Shikari EP2", duration: "12 mins", img: "shikari ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/39fae90a-4ee5-4747-b10f-9938a581e5d5/play_480p.mp4" },
+                { id: 7, title: "Shikari EP3", duration: "28 mins", img: "shikari ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/2cadce9f-8b87-4e74-b0f9-21821e3b8e1c/play_480p.mp4" },
+                { id: 8, title: "Shikari EP4", duration: "35 mins", img: "shikari ep4.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/7184e930-4335-41dc-95f3-b89d22724cf3/play_480p.mp4" },
+                { id: 9, title: "Striped", duration: "26 mins", img: "striped.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/3e63dad7-a70c-4891-b53d-52e986602014/play_480p.mp4" },
+                { id: 10, title: "Surprise", duration: "33 mins", img: "surprise.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/052fcb8c-6721-4142-9e9c-0bc7f45d1363/play_480p.mp4" },
               ].map((video) => (
                 <div key={video.id} className="group cursor-pointer px-2" onClick={() => openVideo(video.videoUrl, video.title)}>
                   <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 max-w-[150px] mx-auto">
-                    <img src={`/Thumbnails/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
+                    <img src={`/POTRAIT/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                         <svg className="w-5 h-5 text-yoga-brown ml-0.5" fill="currentColor" viewBox="0 0 24 24">
@@ -575,20 +562,20 @@ export default function Index() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
               {[
-                { id: 1, title: "Cardio Blast", duration: "30 mins", img: "th_1.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/9aec82c6-d6c1-4ae8-932a-6bf7b5329762/play_480p.mp4" },
-                { id: 2, title: "Strength Training", duration: "35 mins", img: "th_2.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/a773531d-3e5f-4fb2-aef7-e1a20d7b3711/play_480p.mp4" },
-                { id: 3, title: "Full Body Burn", duration: "28 mins", img: "th_3.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/c80c0be0-09e2-483e-9562-17ccd2250188/play_480p.mp4" },
-                { id: 4, title: "Core Workout", duration: "25 mins", img: "th_4.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/b8febc79-f42a-4d93-805c-d4453b1f5604/play_480p.mp4" },
-                { id: 5, title: "HIIT Session", duration: "32 mins", img: "th_5.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/225d5414-d6d3-45c5-aaed-8393c57a1f1d/play_480p.mp4" },
-                { id: 6, title: "Toning Routine", duration: "27 mins", img: "th_6.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/e3168147-273d-4758-ae4f-dd128e41f9c7/play_480p.mp4" },
-                { id: 7, title: "Endurance Build", duration: "40 mins", img: "th_7.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/2f3a0402-035f-4935-8a64-8fc4a2e375fd/play_480p.mp4" },
-                { id: 8, title: "Power Training", duration: "33 mins", img: "th_8.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/974e3e76-5cf9-4366-bc63-3c0f9c2c3507/play_480p.mp4" },
-                { id: 9, title: "Sculpt & Shape", duration: "29 mins", img: "th_9.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/8ed4f9e8-dc12-4e6b-9947-3ef08d2144a4/play_480p.mp4" },
-                { id: 10, title: "Athletic Performance", duration: "36 mins", img: "th_10.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/d08297f1-59e7-4f2c-a66b-f3b5bf4a1104/play_480p.mp4" },
+                { id: 1, title: "Taak Jhaak", duration: "38 mins", img: "taak jhaak.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/43a9f2c3-efb3-4977-9428-4937ef3c57ba/play_480p.mp4" },
+                { id: 2, title: "Tera Nasha", duration: "35 mins", img: "tera nasha.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/6a875bbd-ab04-4d30-91da-345e6ffa02b8/play_480p.mp4" },
+                { id: 3, title: "The Gateway", duration: "40 mins", img: "the gateway.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/8c85eb9d-c814-4b9a-bb71-b830e48b5f31/play_480p.mp4" },
+                { id: 4, title: "The Insult EP1", duration: "33 mins", img: "the insult ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/313ced9a-9cf9-4b89-9e87-ee618f10168a/play_480p.mp4" },
+                { id: 5, title: "The Insult EP2", duration: "35 mins", img: "the insult ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/a22b7fc5-7f6a-4745-be24-b04c0625472b/play_480p.mp4" },
+                { id: 6, title: "The Insult EP3", duration: "32 mins", img: "the insult ep3.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/30016ce9-13e0-4f73-801f-d98839dc384e/play_480p.mp4" },
+                { id: 7, title: "The Insult EP4", duration: "36 mins", img: "the insult ep4.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/92eab99a-4c01-450a-8b6f-5945d13d7bad/play_480p.mp4" },
+                { id: 8, title: "The Interview", duration: "30 mins", img: "the interview.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/b25baf1e-310e-4a5b-b17f-87952fdd1689/play_480p.mp4" },
+                { id: 9, title: "The Killer", duration: "42 mins", img: "the killer.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/3fc37af6-d0f1-40c9-b3a3-fcfc249acdd2/play_480p.mp4" },
+                { id: 10, title: "The Moksh", duration: "38 mins", img: "the moksh.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/c94e730b-c3ea-4c89-8bbc-8c6087a1943e/play_480p.mp4" },
               ].map((video, index) => (
                 <div key={video.id} className="group cursor-pointer animate-fade-in" style={{ animationDelay: `${index * 50}ms` }} onClick={() => openVideo(video.videoUrl, video.title)}>
                   <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
-                    <img src={`/Thumbnails/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
+                    <img src={`/LANDSCAPE/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
                         <svg className="w-6 h-6 text-yoga-brown ml-1" fill="currentColor" viewBox="0 0 24 24">
@@ -613,212 +600,20 @@ export default function Index() {
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
               Premium <span className="text-purple-500">Sexy Series</span>
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-6">
               {[
-                { id: 1, title: "Hot Moments", duration: "5 mins", img: "th_11.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/225d5414-d6d3-45c5-aaed-8393c57a1f1d/play_480p.mp4" },
-                { id: 2, title: "Sensual Stories", duration: "6 mins", img: "th_12.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/e3168147-273d-4758-ae4f-dd128e41f9c7/play_480p.mp4" },
-                { id: 3, title: "Bold Scenes", duration: "4 mins", img: "th_13.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/2f3a0402-035f-4935-8a64-8fc4a2e375fd/play_480p.mp4" },
-                { id: 4, title: "Intimate Tales", duration: "7 mins", img: "th_14.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/974e3e76-5cf9-4366-bc63-3c0f9c2c3507/play_480p.mp4" },
-                { id: 5, title: "Romantic Clips", duration: "5 mins", img: "th_15.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/8ed4f9e8-dc12-4e6b-9947-3ef08d2144a4/play_480p.mp4" },
-                { id: 6, title: "Passion Reels", duration: "6 mins", img: "th_16.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/d08297f1-59e7-4f2c-a66b-f3b5bf4a1104/play_480p.mp4" },
-                { id: 7, title: "Desire Shorts", duration: "4 mins", img: "th_17.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/9aec82c6-d6c1-4ae8-932a-6bf7b5329762/play_480p.mp4" },
-                { id: 8, title: "Steamy Clips", duration: "5 mins", img: "th_18.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/a773531d-3e5f-4fb2-aef7-e1a20d7b3711/play_480p.mp4" },
-                { id: 9, title: "Spicy Moments", duration: "6 mins", img: "th_19.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/c80c0be0-09e2-483e-9562-17ccd2250188/play_480p.mp4" },
-                { id: 10, title: "Tempting Reels", duration: "7 mins", img: "th_20.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/b8febc79-f42a-4d93-805c-d4453b1f5604/play_480p.mp4" },
+                { id: 1, title: "Trapped EP1", duration: "38 mins", img: "trapped ep1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/cc51a661-1e67-43d6-b402-6be260b3cb3b/play_480p.mp4" },
+                { id: 2, title: "Trapped EP2", duration: "35 mins", img: "trapped ep2.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/f9a5efb4-19f7-41d7-b95a-2e14e16dda06/play_480p.mp4" },
+                { id: 3, title: "Vampire Virus", duration: "42 mins", img: "vampire virus.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/ef83250c-8378-4b8c-9b0d-ad17a0cbdd3f/play_480p.mp4" },
+                { id: 4, title: "Virgo Network", duration: "36 mins", img: "virgo network.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/092dea74-082b-45d8-b8a0-a0069791a6b8/play_480p.mp4" },
+                { id: 5, title: "Wrong Encounter", duration: "33 mins", img: "wrong encounter.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/8279b39f-fc3e-49e7-99df-dbb39d5ce8d0/play_480p.mp4" },
+                { id: 6, title: "Yeh Talab", duration: "40 mins", img: "yeh talab.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/548e7f29-ed2c-4dee-94f6-33e665bcfab1/play_480p.mp4" },
+                { id: 7, title: "Yog Guru", duration: "38 mins", img: "yog guru.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/c94e730b-c3ea-4c89-8bbc-8c6087a1943e/play_480p.mp4" },
+                { id: 8, title: "Zeher", duration: "35 mins", img: "zeher.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/d867c6a5-1e2c-4fee-aed7-88b077219809/play_480p.mp4" },
               ].map((video, index) => (
                 <div key={video.id} className="group cursor-pointer animate-fade-in" style={{ animationDelay: `${index * 50}ms` }} onClick={() => openVideo(video.videoUrl, video.title)}>
                   <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
-                    <img src={`/Thumbnails/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                        <svg className="w-6 h-6 text-yoga-brown ml-1" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-2">
-                    <h3 className="font-bold text-sm text-white">{video.title}</h3>
-                    <p className="text-xs text-white/80">{video.duration}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Exclusive Content */}
-        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-yoga-brown/5">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
-              Exclusive <span className="text-purple-500">Content</span>
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
-              {[
-                { id: 1, title: "Special Edition", duration: "8 mins", img: "th_21.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/9aec82c6-d6c1-4ae8-932a-6bf7b5329762/play_480p.mp4" },
-                { id: 2, title: "VIP Access", duration: "9 mins", img: "th_22.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/a773531d-3e5f-4fb2-aef7-e1a20d7b3711/play_480p.mp4" },
-                { id: 3, title: "Premium Plus", duration: "7 mins", img: "th_23.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/c80c0be0-09e2-483e-9562-17ccd2250188/play_480p.mp4" },
-                { id: 4, title: "Elite Series", duration: "10 mins", img: "th_24.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/b8febc79-f42a-4d93-805c-d4453b1f5604/play_480p.mp4" },
-                { id: 5, title: "Luxury Collection", duration: "8 mins", img: "th_25.png", videoUrl: "https://vz-37338a02-bb9.b-cdn.net/225d5414-d6d3-45c5-aaed-8393c57a1f1d/play_480p.mp4" },
-              ].map((video, index) => (
-                <div key={video.id} className="group cursor-pointer animate-fade-in" style={{ animationDelay: `${index * 50}ms` }} onClick={() => openVideo(video.videoUrl, video.title)}>
-                  <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
-                    <img src={`/Thumbnails/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                        <svg className="w-6 h-6 text-yoga-brown ml-1" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-2">
-                    <h3 className="font-bold text-sm text-white">{video.title}</h3>
-                    <p className="text-xs text-white/80">{video.duration}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Wellness Collection */}
-        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-yoga-brown/5">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
-              Wellness <span className="text-purple-500">Collection</span>
-            </h2>
-            <Carousel slidesToShow={5}>
-              {[
-                { id: 1, title: "Flexibility Flow", duration: "25 mins", img: "1.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/b63d2451-d1ff-4f40-8487-96e17c30d0ba/play_480p.mp4" },
-                { id: 2, title: "Body Balance", duration: "30 mins", img: "2.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/77e9d93d-8dd5-4872-8eca-76f47a101535/play_480p.mp4" },
-                { id: 3, title: "Stretch & Tone", duration: "28 mins", img: "3.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/da9a1047-267b-4eaf-9fe8-8672bbe03a99/play_480p.mp4" },
-                { id: 4, title: "Power Poses", duration: "32 mins", img: "4.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/7ff2c6e3-9d04-44b1-ab74-23b50bf2ee3f/play_480p.mp4" },
-                { id: 5, title: "Core Strength", duration: "27 mins", img: "5.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/62d9039d-d6a2-4875-ad26-044ecb73f465/play_480p.mp4" },
-                { id: 6, title: "Mindful Movement", duration: "35 mins", img: "6.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/0009cd8e-cdb6-47f3-9de3-50a54ff31db9/play_480p.mp4" },
-                { id: 7, title: "Graceful Asanas", duration: "29 mins", img: "7.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/358c36ac-f7d7-4199-b9a3-4a47440ad736/play_480p.mp4" },
-                { id: 8, title: "Wellness Flow", duration: "31 mins", img: "8.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/421d5e21-9fac-4e47-b306-d3af1971b33f/play_480p.mp4" },
-                { id: 9, title: "Energy Boost", duration: "26 mins", img: "9.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/2c0ebe0b-bd90-4f7a-a562-ca1221358571/play_480p.mp4" },
-                { id: 10, title: "Zen Practice", duration: "33 mins", img: "10.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/4717f4c8-448b-4005-b170-b55f85513b3b/play_480p.mp4" },
-              ].map((video) => (
-                <div key={video.id} className="group cursor-pointer px-2" onClick={() => openVideo(video.videoUrl, video.title)}>
-                  <div className="relative aspect-[2/3] rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300 max-w-[150px] mx-auto">
-                    <img src={`/YogaUserThumbnails/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <svg className="w-5 h-5 text-yoga-brown ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-2 max-w-[150px] mx-auto">
-                    <h3 className="font-bold text-xs text-white truncate">{video.title}</h3>
-                    <p className="text-xs text-white/80">{video.duration}</p>
-                  </div>
-                </div>
-              ))}
-            </Carousel>
-          </div>
-        </section>
-
-        {/* Fitness Series */}
-        <section className="py-12 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
-              Fitness <span className="text-purple-500">Series</span>
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-              {[
-                { id: 1, title: "Cardio Blast", duration: "30 mins", img: "F1.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/067e9e6f-b190-4ea8-837d-edf2f2ee5d93/play_480p.mp4" },
-                { id: 2, title: "Strength Training", duration: "35 mins", img: "F2.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/24e3d12e-e3dd-4517-bc65-802fc41e1387/play_480p.mp4" },
-                { id: 3, title: "Full Body Burn", duration: "28 mins", img: "F3.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/2b392888-3390-460e-8aa0-f7c93a00e27c/play_480p.mp4" },
-                { id: 4, title: "Core Workout", duration: "25 mins", img: "F4.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/6237de2b-5855-459b-a3f3-9889c710564d/play_480p.mp4" },
-                { id: 5, title: "HIIT Session", duration: "32 mins", img: "F5.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/1b5550eb-1c06-44cb-ad97-7f4391b18f33/play_480p.mp4" },
-                { id: 6, title: "Toning Routine", duration: "27 mins", img: "F6.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/c3ac8858-6f5e-4230-bd90-0681a0e3367c/play_480p.mp4" },
-                { id: 7, title: "Endurance Build", duration: "40 mins", img: "F7.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/fe230bf2-38d4-408b-a83f-c87f529a42a4/play_480p.mp4" },
-                { id: 8, title: "Power Training", duration: "33 mins", img: "F8.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/3558ac7d-ecea-485b-bbce-bceb768c867d/play_480p.mp4" },
-                { id: 9, title: "Sculpt & Shape", duration: "29 mins", img: "P1.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/73b38601-f4ca-48db-9b53-b9e82df40091/play_480p.mp4" },
-                { id: 10, title: "Athletic Performance", duration: "36 mins", img: "P2.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/c4710130-74d1-418f-977c-d766904b1186/play_480p.mp4" },
-              ].map((video, index) => (
-                <div key={video.id} className="group cursor-pointer animate-fade-in" style={{ animationDelay: `${index * 50}ms` }} onClick={() => openVideo(video.videoUrl, video.title)}>
-                  <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
-                    <img src={`/YogaUserThumbnails/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                        <svg className="w-6 h-6 text-yoga-brown ml-1" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-2">
-                    <h3 className="font-bold text-sm text-white">{video.title}</h3>
-                    <p className="text-xs text-white/80">{video.duration}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Premium Shorts */}
-        <section className="py-12 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
-              Premium <span className="text-purple-500">Shorts</span>
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-              {[
-                { id: 1, title: "Quick Stretch", duration: "5 mins", img: "P3.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/efc87638-9594-4cdc-9341-678021d3fda6/play_480p.mp4" },
-                { id: 2, title: "Morning Energizer", duration: "6 mins", img: "P4.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/ee6bf8ad-ae76-40e9-b920-46d05aad63cf/play_480p.mp4" },
-                { id: 3, title: "Core Focus", duration: "4 mins", img: "P5.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/0de683b5-5e12-4617-9bd8-c0ab399d050a/play_480p.mp4" },
-                { id: 4, title: "Balance Builder", duration: "7 mins", img: "P6.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/22f0b155-cee5-4055-a936-380b4d78e049/play_480p.mp4" },
-                { id: 5, title: "Cardio Burst", duration: "5 mins", img: "P7.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/d9378cc3-f6d1-43e5-835b-875f4941fdfc/play_480p.mp4" },
-                { id: 6, title: "Flexibility Quick", duration: "6 mins", img: "P8.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/e636744e-f8c4-4e02-8d06-800ccde3a14a/play_480p.mp4" },
-                { id: 7, title: "Power Moves", duration: "4 mins", img: "P9.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/ede0951b-f601-4a20-91b4-0e6b46fa7919/play_480p.mp4" },
-                { id: 8, title: "Express Workout", duration: "5 mins", img: "P10.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/a9423b93-f129-4915-88bd-3f99ba720884/play_480p.mp4" },
-                { id: 9, title: "Mini Session", duration: "6 mins", img: "S1.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/a36e7860-11b5-4467-85ad-a15310f12ada/play_480p.mp4" },
-                { id: 10, title: "Quick Tone", duration: "7 mins", img: "S2.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/38b0a19c-9058-44a1-9b8a-d52ac72aaf7e/play_480p.mp4" },
-              ].map((video, index) => (
-                <div key={video.id} className="group cursor-pointer animate-fade-in" style={{ animationDelay: `${index * 50}ms` }} onClick={() => openVideo(video.videoUrl, video.title)}>
-                  <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
-                    <img src={`/YogaUserThumbnails/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                        <svg className="w-6 h-6 text-yoga-brown ml-1" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-2">
-                    <h3 className="font-bold text-sm text-white">{video.title}</h3>
-                    <p className="text-xs text-white/80">{video.duration}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Elite Training */}
-        <section className="py-12 px-4 sm:px-6 lg:px-8 bg-yoga-brown/5">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
-              Elite <span className="text-purple-500">Training</span>
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
-              {[
-                { id: 1, title: "Special Edition", duration: "8 mins", img: "S4.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/3fb78412-1e37-48ba-9979-24fa911a9996/play_480p.mp4" },
-                { id: 2, title: "VIP Access", duration: "9 mins", img: "S5.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/59de7915-6920-449e-a287-d1288154f273/play_480p.mp4" },
-                { id: 3, title: "Premium Plus", duration: "7 mins", img: "S6.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/2e8befac-542c-4f67-8529-f4c5dfbc98a7/play_480p.mp4" },
-                { id: 4, title: "Elite Series", duration: "10 mins", img: "S7.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/eae9d2e8-431c-41b0-9f15-7492a45a05e6/play_480p.mp4" },
-                { id: 5, title: "Luxury Collection", duration: "8 mins", img: "S8.png", videoUrl: "https://vz-a8f5da8b-27d.b-cdn.net/0ed8dd89-3e05-48fa-b193-a53ad7c77e55/play_480p.mp4" },
-              ].map((video, index) => (
-                <div key={video.id} className="group cursor-pointer animate-fade-in" style={{ animationDelay: `${index * 50}ms` }} onClick={() => openVideo(video.videoUrl, video.title)}>
-                  <div className="relative aspect-video rounded-lg overflow-hidden shadow-md group-hover:shadow-xl transition-all duration-300">
-                    <img src={`/YogaUserThumbnails/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
+                    <img src={`/LANDSCAPE/${video.img}`} alt={video.title} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
                         <svg className="w-6 h-6 text-yoga-brown ml-1" fill="currentColor" viewBox="0 0 24 24">
