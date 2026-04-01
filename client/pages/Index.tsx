@@ -482,7 +482,7 @@ export default function Index() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
               {[
-                { id: 1, title: "Legend of Hell", season: "Hot & Thrilling", img: "LEGEND OF HELL.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/bb7e3b04-7aa5-40a9-88f2-d02322495d45/play_480p.mp4" },
+                { id: 1, title: "Legend of Hell", season: "Thrilling", img: "LEGEND OF HELL.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/bb7e3b04-7aa5-40a9-88f2-d02322495d45/play_480p.mp4" },
                 { id: 2, title: "Kill Her Goats", season: "Bold & Intense", img: "KILL HER GOATS.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/b8a0faee-f6e2-48d3-a6c0-d41bcd81010c/play_480p.mp4" },
                 { id: 3, title: "Making Off", season: "Steamy Drama", img: "MAKING OFF.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/86b154cc-57ae-4d96-b205-12e9d4a5b5b4/play_480p.mp4" },
                 { id: 4, title: "Muck Original", season: "Sensual Mystery", img: "MUCK ORIGNAL.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/b69365f5-72f5-464e-b4b6-5e23f21acb4b/play_480p.mp4" },
