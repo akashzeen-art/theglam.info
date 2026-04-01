@@ -368,7 +368,7 @@ export default function Index() {
             <Carousel slidesToShow={3}>
               {[
                 { id: 1, title: "Hot Coffee EP1", time: "37 mins", img: "hot coffie ep 1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/9c5e598a-06bb-4b7d-89f9-cb76ec94a78b/play_480p.mp4" },
-                { id: 2, title: "Hot Shot", time: "36 mins", img: "HOT SHOT.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/ebbf3364-1d25-4454-8e8a-0aa166f31dd7/play_480p.mp4" },
+                { id: 2, title: "Hot Shot", time: "36 mins", img: "hot shot1.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/ebbf3364-1d25-4454-8e8a-0aa166f31dd7/play_480p.mp4" },
                 { id: 3, title: "Jaal", time: "41 mins", img: "jaal.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/23e20e42-71bf-4d34-bb2b-638a6e00d126/play_480p.mp4" },
                 { id: 4, title: "Jinn", time: "38 mins", img: "jinn.png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/caff7c4f-b4a8-41e7-adec-1d848115ff70/play_480p.mp4" },
                 { id: 5, title: "Kama Rasam", time: "43 mins", img: "kama rasam .png", videoUrl: "https://vz-66b329af-17e.b-cdn.net/25199036-86e4-4231-9e7e-529f90ac0e48/play_480p.mp4" },
