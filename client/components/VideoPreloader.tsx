@@ -137,7 +137,7 @@ export default function VideoPreloader({ isExiting = false, onLogoTransition, is
             isExiting ? "opacity-0" : "opacity-100"
           }`}>
             <p className="text-lg font-medium text-white/80 mb-6">
-              Loading Hot Desi Content...
+              Loading Hot Content...
             </p>
 
             {/* Progress bar */}

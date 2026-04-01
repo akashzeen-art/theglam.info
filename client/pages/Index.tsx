@@ -62,7 +62,7 @@ export default function Index() {
       name: "Aastha",
       time: "35 mins",
       image: "/LANDSCAPE/aastha.png",
-      description: "Desi romance ki kahani, full of passion aur pyaar",
+      description: "romance ki kahani, full of passion aur pyaar",
       videoUrl: "https://vz-66b329af-17e.b-cdn.net/df51e289-de98-44b6-8916-46bb9ab37fb8/play_480p.mp4",
     },
     {
@@ -153,7 +153,7 @@ export default function Index() {
                 Featured <span className="text-purple-500">Top Videos</span>
               </h2>
               <p className="text-lg text-white/90 max-w-2xl mx-auto">
-                Sabse exciting aur popular desi content, specially selected for you
+                Sabse exciting aur popular content, specially selected for you
               </p>
             </div>
 
@@ -190,7 +190,7 @@ export default function Index() {
         <section className="py-8 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-6">
-              Sabhi <span className="text-purple-500">Desi Shows</span>
+              Sabhi <span className="text-purple-500">Shows</span>
             </h2>
             <Carousel slidesToShow={3}>
               {videoUrls.slice(0, 20).map((video) => (
@@ -215,11 +215,11 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Popular Desi Shows */}
+        {/* Popular Shows */}
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
-              Popular Desi <span className="text-purple-500">Web Shows</span>
+              Popular <span className="text-purple-500">Web Shows</span>
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-6">
               {[
@@ -322,12 +322,12 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Hot Desi Series */}
+        {/* Hot Series */}
         <section className="py-12 px-4 sm:px-6 lg:px-8 bg-yoga-brown/5">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-3">
-                Hot &amp; Trending <span className="text-purple-500">Desi Series</span>
+                Hot &amp; Trending <span className="text-purple-500">Series</span>
               </h2>
               <p className="text-white/90 text-lg">Watch Now</p>
             </div>
@@ -359,7 +359,7 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Hot Episodes Desi Masala */}
+        {/* Hot Episodes Masala */}
         <section className="py-6 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-4">
@@ -397,7 +397,7 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Premium Desi Collection */}
+        {/* Premium Collection */}
         <section className="py-6 px-4 sm:px-6 lg:px-8 bg-transparent">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-4">
@@ -594,7 +594,7 @@ export default function Index() {
           </div>
         </section>
 
-        {/* Premium Desi Shorts */}
+        {/* Premium Shorts */}
         <section className="py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl sm:text-5xl font-bold text-white text-center mb-8">
