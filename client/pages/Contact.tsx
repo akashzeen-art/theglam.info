@@ -23,7 +23,7 @@ export default function Contact() {
             </div>
 
             <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 sm:p-12 animate-fade-in">
-              <h2 className="text-3xl font-bold text-white mb-8">nServe Technology LLC Private Limited</h2>
+              <h2 className="text-3xl font-bold text-white mb-8">nServe Technology LLC</h2>
 
               <div className="space-y-6">
                 <div className="flex items-start gap-4">

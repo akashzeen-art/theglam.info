@@ -21,7 +21,7 @@ export default function Terms() {
             <p className="text-sm mb-8">Last Updated: 30-06-2025</p>
             
             <div className="space-y-6 text-sm leading-relaxed">
-              <p>At nServe Technology LLC Private Limited, accessible from https://theglam.info/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by https://theglam.info/ and how we use it.</p>
+              <p>At nServe Technology LLC, accessible from https://theglam.info/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by https://theglam.info/ and how we use it.</p>
               
               <h2 className="text-2xl font-bold mt-8 mb-4">Consent</h2>
               <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
@@ -48,7 +48,7 @@ export default function Terms() {
               </ul>
               
               <h2 className="text-2xl font-bold mt-8 mb-4">Terms and Conditions</h2>
-              <p>The Platform is owned by nServe Technology LLC Private Limited, a company incorporated under the Companies Act, 1956. Your use of the Platform and services are governed by these Terms of Use.</p>
+              <p>The Platform is owned by nServe Technology LLC, a company incorporated under the Companies Act, 1956. Your use of the Platform and services are governed by these Terms of Use.</p>
               
               <p className="mt-4">All disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of the United Arab Emirates and shall be governed by the laws of the United Arab Emirates.</p>
             </div>
